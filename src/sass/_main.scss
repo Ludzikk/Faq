@@ -1,0 +1,96 @@
+@use "./colors" as *;
+
+.main {
+  &__img {
+    &--mobile {
+      width: 100%;
+      height: 232px;
+    }
+
+    &--desktop {
+      display: none;
+      width: 100%;
+    }
+  }
+}
+
+.faq {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  max-width: 600px;
+  width: 90%;
+  height: auto;
+  transform: translate(-50%, -50%);
+  padding: 2em;
+  border-radius: 15px;
+  background-color: $white;
+
+  &__top,
+  &__itemtop {
+    display: flex;
+    align-items: center;
+    padding-bottom: 1em;
+  }
+
+  &__itemtop {
+    justify-content: space-between;
+    cursor: pointer;
+
+    &:hover > p {
+        color: purple;
+    }
+  }
+
+  &__top {
+    padding-bottom: 3em;
+  }
+
+  &__title {
+    padding-left: 0.6em;
+  }
+
+  &__list {
+    list-style-type: none;
+  }
+
+  &__itembottom {
+    height: 0;
+    overflow-y: hidden;
+    transition: height 0.5s;
+  }
+
+  &__question, &__title {
+    color: $darkpurple;
+  }
+
+  &__text {
+    color: $grayishpurple;
+  }
+
+  &__question {
+    padding-right: 1.3em;
+    font-weight: 600;
+    transition: color 0.5s;
+  }
+
+  &__item {
+    padding-bottom: 1.5em;
+  }
+}
+
+.active-faq {
+  height: 80px;
+}
+
+@media (min-width: 1440px) {
+  .main__img {
+    &--mobile {
+      display: none;
+    }
+
+    &--desktop {
+      display: block;
+    }
+  }
+}
